@@ -23,43 +23,43 @@
     }
     main.container {
       flex-grow: 1;
-      padding: 3rem 1rem 4rem;
-      max-width: 700px;
+      padding: 2rem 1rem 4rem;
+      max-width: 900px;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
-    ul.fs-5 {
-      list-style-type: disc;
-      padding-left: 1.5rem;
-      margin-bottom: 3rem;
+    .estrutura-list {
       width: 100%;
+      margin-bottom: 2rem;
     }
-    ul.fs-5 li {
+    .estrutura-list li {
+      font-size: 1.2rem;
       margin-bottom: 1rem;
+      line-height: 1.5;
     }
-    .proprietarios {
+    .fotos-estrutura {
       display: flex;
-      gap: 2rem;
-      justify-content: center;
       flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
       margin-bottom: 3rem;
       width: 100%;
     }
-    .proprietario {
-      max-width: 200px;
-      text-align: center;
-      font-size: 1rem;
-      color: #004d40;
-    }
-    .proprietario img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 1rem;
+    .fotos-estrutura img {
+      border-radius: 8px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      width: 280px;
+      height: 180px;
+      object-fit: cover;
+    }
+    .descricao-foto {
+      font-size: 1rem;
+      text-align: center;
+      margin-top: 0.5rem;
+      color: #004d40;
+      font-weight: 600;
     }
     .botoes-grade {
       display: grid;
@@ -67,6 +67,8 @@
       grid-template-rows: repeat(2, 80px);
       gap: 16px;
       justify-content: center;
+      width: 100%;
+      max-width: 480px;
     }
     .botao-transparente {
       background-color: #e0f7fa !important;
@@ -97,9 +99,6 @@
       box-shadow: 0 6px 14px rgba(0, 77, 64, 0.4);
       outline: none;
     }
-    .botao-texto .descricao {
-      display: none;
-    }
     footer.footer {
       border-top: 1px solid #ddd;
       background-color: #f8f9fa;
@@ -107,6 +106,8 @@
       font-size: 0.9rem;
       text-align: center;
       color: #333;
+      position: relative;
+      z-index: 5;
     }
     footer.footer a {
       color: #25d366;
@@ -127,9 +128,9 @@
         font-size: 1.1rem;
         height: 70px;
       }
-      .proprietarios {
-        flex-direction: column;
-        align-items: center;
+      .fotos-estrutura img {
+        width: 100%;
+        height: auto;
       }
     }
   </style>
@@ -140,24 +141,37 @@
   </header>
 
   <main class="container">
-    <ul class="fs-5">
-      <li>Piscina ampla com área coberta</li>
-      <li>Churrasqueira completa</li>
-      <li>Salão de festas</li>
-      <li>Campo de futebol</li>
-      <li>Acomodações para até 30 pessoas</li>
+    <ul class="estrutura-list" aria-label="Descrição detalhada da estrutura da chácara">
+      <li><strong>Piscina ampla com área coberta:</strong> Espaço para relaxar com proteção do sol e churrasco próximo.</li>
+      <li><strong>Churrasqueira completa:</strong> Equipamentos modernos, bancada, e mesas para confraternizações.</li>
+      <li><strong>Salão de festas:</strong> Ambiente climatizado, som, iluminação e capacidade para até 100 pessoas.</li>
+      <li><strong>Campo de futebol:</strong> Gramado bem cuidado, iluminação noturna e vestiários.</li>
+      <li><strong>Acomodações confortáveis:</strong> Quartos amplos e limpos, camas para até 30 pessoas, banheiros modernos.</li>
+      <li><strong>Estacionamento:</strong> Área segura e iluminada para veículos dos visitantes.</li>
+      <li><strong>Jardins e área verde:</strong> Espaço com árvores, flores e espaço para piqueniques e passeios.</li>
     </ul>
 
-    <!-- Apresentação dos donos -->
-    <section class="proprietarios" aria-label="Apresentação dos proprietários">
-      <div class="proprietario">
-        <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Foto do João" />
-        <p><strong>João Silva</strong><br />Apaixonado por natureza e hospitalidade. Sempre presente para receber nossos visitantes.</p>
-      </div>
-      <div class="proprietario">
-        <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Foto da Maria" />
-        <p><strong>Maria Silva</strong><br />Cuida com carinho de cada detalhe para que você tenha uma experiência inesquecível.</p>
-      </div>
+    <section class="fotos-estrutura" aria-label="Fotos da estrutura da chácara">
+      <figure>
+        <img src="https://source.unsplash.com/featured/?pool" alt="Piscina ampla com área coberta" />
+        <figcaption class="descricao-foto">Piscina ampla com área coberta</figcaption>
+      </figure>
+      <figure>
+        <img src="https://source.unsplash.com/featured/?barbecue,grill" alt="Churrasqueira completa" />
+        <figcaption class="descricao-foto">Churrasqueira completa com bancada</figcaption>
+      </figure>
+      <figure>
+        <img src="https://source.unsplash.com/featured/?party,hall" alt="Salão de festas" />
+        <figcaption class="descricao-foto">Salão de festas climatizado</figcaption>
+      </figure>
+      <figure>
+        <img src="https://source.unsplash.com/featured/?football,field" alt="Campo de futebol" />
+        <figcaption class="descricao-foto">Campo de futebol iluminado</figcaption>
+      </figure>
+      <figure>
+        <img src="https://source.unsplash.com/featured/?garden,nature" alt="Jardins e área verde" />
+        <figcaption class="descricao-foto">Jardins e área verde para passeios</figcaption>
+      </figure>
     </section>
 
     <!-- Botões 2x2 padrão -->
@@ -170,9 +184,7 @@
   </main>
 
   <footer class="footer">
-    <a href="https://wa.me/5511912345678" target="_blank" rel="noopener" aria-label="WhatsApp" class="whatsapp-link">📱 WhatsApp</a> &nbsp;|&nbsp;
-    <span>Proprietários: João e Maria</span> &nbsp;|&nbsp;
-    <span>Contato: chacara@email.com | (11) 91234-5678</span>
+    <a href="https://wa.me/5511912345678" target="_blank" rel="noopener" aria-label="WhatsApp" class="whatsapp-link">📱 WhatsApp</a>
   </footer>
 </body>
 </html>
