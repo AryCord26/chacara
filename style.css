@@ -13,7 +13,7 @@ body, html {
 }
 
 /* Vídeo de fundo para hero */
-.video-fundo {
+.video-bg {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -97,8 +97,8 @@ body, html {
 
 .botao-transparente:hover,
 .botao-transparente:focus {
-  background-color: rgba(255, 255, 255, 0.15);
-  color: #fff9c4; /* amarelo pastel */
+  background-color: #1e88e5; /* azul vibrante */
+  color: #fff;
   transform: none;
   box-shadow: none;
   outline: none;
