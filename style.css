@@ -37,20 +37,65 @@ body, html {
   margin: 0 auto;
 }
 
-.botao {
+/* Botões translúcidos com hover colorido */
+.botao-transparente {
+  display: inline-block;
+  width: 100%;
+  padding: 1rem 0;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #333;
+  font-weight: 600;
+  font-size: 1.25rem;
+  text-align: center;
   border-radius: 12px;
-  font-weight: bold;
-  font-size: 1.1rem;
-  transition: transform 0.2s ease;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.2s ease;
+  user-select: none;
 }
 
-.botao:hover {
+.botao-transparente:hover {
+  background-color: #fff9c4; /* amarelo pastel */
+  color: #5a5a00;
   transform: scale(1.05);
+  box-shadow: 0 6px 14px rgba(250, 230, 100, 0.6);
 }
 
-/* Rodapé e conteúdo interno */
+/* Cabeçalhos com linhas decorativas */
+.linha-horizontal {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #ffc107; /* amarelo pastel */
+  box-shadow: 0 0 8px #ffeb3b;
+  transform: translateY(-6px);
+  border-radius: 2px;
+  z-index: 10;
+}
+
+.linha-diagonal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(135deg, transparent 30%, #ffeb3b 80%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%);
+  filter: drop-shadow(0 0 5px #ffeb3b);
+  z-index: 10;
+}
+
+/* Rodapé */
 .footer {
   border-top: 1px solid #ddd;
+  background-color: #f8f9fa;
+  position: relative;
+  z-index: 5;
 }
 
 .shadow-top {
@@ -68,3 +113,32 @@ body, html {
   }
 }
 
+/* Responsividade para grade e botões */
+
+.botoes-grade > div {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+@media (max-width: 575.98px) {
+  .titulo {
+    font-size: 2.5rem;
+  }
+  .botao-transparente {
+    font-size: 1rem;
+    padding: 0.8rem 0;
+  }
+  .botoes-grade {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .titulo {
+    font-size: 3rem;
+  }
+  .botao-transparente {
+    font-size: 1.1rem;
+    padding: 1rem 0;
+  }
+}
