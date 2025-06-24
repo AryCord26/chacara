@@ -23,30 +23,50 @@
     }
     main.container {
       flex-grow: 1;
-      padding: 3rem 1rem 4rem;
-      max-width: 900px;
+      padding: 2rem 1rem 4rem;
+      max-width: 960px;
       margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
     }
-    .row.g-4 {
-      width: 100%;
-      margin-bottom: 3rem;
+    /* Grid das fotos com 3 colunas e gap */
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
     }
-    img {
+    figure {
+      margin: 0;
       border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-      width: 100%;
-      height: auto;
-      object-fit: cover;
+      overflow: hidden;
+      background-color: #fff;
+      box-shadow: 0 4px 10px rgba(0,77,64,0.1);
+      transition: box-shadow 0.3s ease;
     }
+    figure:hover {
+      box-shadow: 0 8px 20px rgba(0,77,64,0.3);
+    }
+    figure img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    figcaption {
+      padding: 0.8rem 1rem;
+      font-size: 0.95rem;
+      color: #004d40;
+      font-weight: 600;
+      background-color: #e0f2f1;
+      text-align: center;
+    }
+
+    /* Botões 2x2 padrão */
     .botoes-grade {
       display: grid;
       grid-template-columns: repeat(2, 220px);
       grid-template-rows: repeat(2, 80px);
       gap: 16px;
       justify-content: center;
+      margin-top: 3rem;
     }
     .botao-transparente {
       background-color: #e0f7fa !important;
@@ -77,9 +97,6 @@
       box-shadow: 0 6px 14px rgba(0, 77, 64, 0.4);
       outline: none;
     }
-    .botao-texto .descricao {
-      display: none;
-    }
     footer.footer {
       border-top: 1px solid #ddd;
       background-color: #f8f9fa;
@@ -87,6 +104,7 @@
       font-size: 0.9rem;
       text-align: center;
       color: #333;
+      margin-top: auto;
     }
     footer.footer a {
       color: #25d366;
@@ -102,6 +120,7 @@
         grid-template-columns: 1fr;
         grid-template-rows: repeat(4, 80px);
         max-width: 260px;
+        margin: 0 auto;
       }
       .botao-transparente {
         font-size: 1.1rem;
@@ -116,19 +135,33 @@
   </header>
 
   <main class="container">
-    <div class="row g-4 mb-5">
-      <div class="col-md-4">
-        <img src="https://source.unsplash.com/400x300/?farm,countryside" alt="Foto da chácara" />
-      </div>
-      <div class="col-md-4">
-        <img src="https://source.unsplash.com/400x300/?pool,water" alt="Piscina" />
-      </div>
-      <div class="col-md-4">
-        <img src="https://source.unsplash.com/400x300/?nature,trees" alt="Natureza" />
-      </div>
-    </div>
+    <section class="galeria">
+      <figure>
+        <img src="https://source.unsplash.com/600x400/?farm,countryside" alt="Vista geral da chácara com área verde" />
+        <figcaption>Vista geral da chácara com área verde e natureza exuberante.</figcaption>
+      </figure>
+      <figure>
+        <img src="https://source.unsplash.com/600x400/?pool,water" alt="Piscina cristalina da chácara" />
+        <figcaption>Piscina cristalina perfeita para relaxar nos dias quentes.</figcaption>
+      </figure>
+      <figure>
+        <img src="https://source.unsplash.com/600x400/?nature,trees" alt="Área verde com árvores nativas" />
+        <figcaption>Área verde preservada com árvores nativas da região.</figcaption>
+      </figure>
+      <figure>
+        <img src="https://source.unsplash.com/600x400/?barbecue,outdoor" alt="Espaço para churrasco ao ar livre" />
+        <figcaption>Espaço para churrasco ao ar livre, ideal para confraternizações.</figcaption>
+      </figure>
+      <figure>
+        <img src="https://source.unsplash.com/600x400/?fireplace,cabin" alt="Lareira aconchegante para noites frias" />
+        <figcaption>Lareira aconchegante para noites frias e momentos relaxantes.</figcaption>
+      </figure>
+      <figure>
+        <img src="https://source.unsplash.com/600x400/?garden,flowers" alt="Jardim florido e bem cuidado" />
+        <figcaption>Jardim florido e bem cuidado que traz alegria ao ambiente.</figcaption>
+      </figure>
+    </section>
 
-    <!-- Botões 2x2 padrão -->
     <div class="botoes-grade">
       <a href="index.html" class="botao-transparente" tabindex="0">
         <div class="botao-texto"><strong>Início</strong></div>
