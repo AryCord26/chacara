@@ -6,7 +6,6 @@ body, html {
 
 /* Página Inicial */
 .hero {
-  /* removido background-image para usar vídeo */
   position: relative;
   height: 100vh;
   overflow: hidden;
@@ -24,13 +23,13 @@ body, html {
   z-index: 0;
   transform: translate(-50%, -50%);
   object-fit: cover;
-  filter: brightness(0.6); /* escurecer levemente o vídeo */
+  filter: brightness(0.6);
 }
 
 .overlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.4); /* leve transparência preta */
+  background-color: rgba(0, 0, 0, 0.4);
   z-index: 1;
 }
 
@@ -40,8 +39,8 @@ body, html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* centraliza verticalmente */
-  height: 100vh;           /* altura total da tela */
+  justify-content: center;
+  height: 100vh;
   padding: 0 10px;
   color: #fff;
   text-align: center;
@@ -65,13 +64,11 @@ body, html {
   margin: 0 auto;
 }
 
-/* Container dos botões */
 .botao-container {
   width: 100%;
   padding: 0;
 }
 
-/* Botões transparentes, sem sombra, texto branco */
 .botao-transparente {
   position: relative;
   display: flex;
@@ -97,7 +94,7 @@ body, html {
 
 .botao-transparente:hover,
 .botao-transparente:focus {
-  background-color: #1e88e5; /* azul vibrante */
+  background-color: #90caf9; /* azul pastel */
   color: #fff;
   transform: none;
   box-shadow: none;
@@ -121,7 +118,7 @@ body, html {
 }
 
 .footer a {
-  color: #25d366; /* verde whatsapp */
+  color: #25d366;
   font-weight: 600;
   text-decoration: none;
 }
