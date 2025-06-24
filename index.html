@@ -11,6 +11,7 @@
       height: 100%;
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
+      overflow: hidden; /* evita scroll com vídeo fullscreen */
     }
 
     .hero {
@@ -20,22 +21,20 @@
       background: #000;
     }
 
+    /* Estilo do iframe do YouTube em fullscreen como fundo */
     .video-bg {
       position: absolute;
       top: 50%;
       left: 50%;
-      width: auto;
-      height: 100%;
-      min-width: 100%;
-      min-height: 100%;
+      width: 177.77vh; /* 100 * 16/9 para cobrir toda altura */
+      height: 100vh;
       transform: translate(-50%, -50%);
-      object-fit: cover;
-      z-index: 0;
       pointer-events: none;
-      user-select: none;
+      z-index: 0;
       filter: brightness(0.6);
     }
 
+    /* Overlay preta semi-transparente */
     .overlay {
       position: absolute;
       inset: 0;
@@ -160,10 +159,14 @@
 </head>
 <body class="home">
   <div class="hero">
-    <video autoplay muted loop playsinline class="video-bg" aria-label="Vídeo aéreo da chácara">
-      <source src="https://cdn.pixabay.com/vimeo/340056405/Field%20Aerial%20-%201020x576.mp4" type="video/mp4" />
-      Seu navegador não suporta vídeo em background.
-    </video>
+    <iframe
+      class="video-bg"
+      src="https://www.youtube.com/embed/kHAUIo0gd50?autoplay=1&mute=1&loop=1&playlist=kHAUIo0gd50&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3"
+      title="Vídeo aéreo da chácara"
+      frameborder="0"
+      allow="autoplay; fullscreen"
+      allowfullscreen
+    ></iframe>
 
     <div class="overlay"></div>
 
