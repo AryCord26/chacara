@@ -108,6 +108,14 @@ body, html {
   pointer-events: auto;
 }
 
+/* Indicação visual extra para foco via teclado */
+.botao-transparente.focus-visible {
+  outline: 3px solid #ffeb3b; /* amarelo brilhante */
+  outline-offset: 4px;
+  box-shadow: 0 0 8px 3px #fff9c4;
+  transition: box-shadow 0.3s ease;
+}
+
 /* Linhas divisórias */
 .linha-horizontal {
   position: absolute;
