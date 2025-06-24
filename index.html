@@ -33,6 +33,7 @@
       z-index: 0;
       pointer-events: none;
       user-select: none;
+      filter: brightness(0.6);
     }
 
     .overlay {
@@ -77,25 +78,26 @@
     }
 
     .botao-transparente {
-      width: 100%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       height: 80px;
       background-color: transparent !important;
       color: #fff;
       font-weight: 700;
       font-size: 1.8rem;
-      box-shadow: none !important;
-      border-radius: 0;
-      justify-content: center;
       text-align: center;
-      padding: 0;
-      border: none;
+      border-radius: 0;
+      text-decoration: none;
+      box-shadow: none !important;
       transition: color 0.3s ease, background-color 0.3s ease;
       user-select: none;
+      padding: 0;
       cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
+      overflow: visible;
+      border: none;
     }
 
     .botao-transparente:hover,
@@ -136,13 +138,13 @@
       .titulo {
         font-size: 2.5rem;
       }
-      .botao-transparente {
-        font-size: 1.5rem;
-        height: 70px;
-      }
       .botoes-grade {
         max-width: 100%;
         padding: 0 10px;
+      }
+      .botao-transparente {
+        font-size: 1.5rem;
+        height: 70px;
       }
     }
 
@@ -159,7 +161,8 @@
 <body class="home">
   <div class="hero">
     <video autoplay muted loop playsinline class="video-bg" aria-label="Vídeo aéreo da chácara">
-      <source src="https://player.vimeo.com/external/448825778.sd.mp4?s=f77f05c49fbe5d8fbc84203ef6df179be8c78e7e&profile_id=164&oauth2_token_id=57447761" type="video/mp4" />
+      <source src="https://cdn.videvo.net/videvo_files/video/free/2017-11/small_watermarked/170927_07_Aerial_San_Diego_01_preview.webm" type="video/webm" />
+      <source src="https://cdn.videvo.net/videvo_files/video/free/2017-11/small_watermarked/170927_07_Aerial_San_Diego_01_preview.mp4" type="video/mp4" />
       Seu navegador não suporta vídeo em background.
     </video>
 
@@ -169,7 +172,6 @@
       <h1 class="titulo">Chácara</h1>
       <div class="container">
         <div class="row g-0 botoes-grade justify-content-center">
-
           <div class="col-12 botao-container">
             <a href="historia.html" class="botao-transparente" tabindex="0">
               <div class="botao-texto">
@@ -201,7 +203,6 @@
               </div>
             </a>
           </div>
-
         </div>
       </div>
     </div>
