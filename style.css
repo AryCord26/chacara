@@ -4,14 +4,14 @@ body, html {
   font-family: 'Segoe UI', sans-serif;
 }
 
-/* Página Inicial */
+/* Hero com vídeo */
 .hero {
   position: relative;
   height: 100vh;
   overflow: hidden;
 }
 
-/* Vídeo de fundo para hero */
+/* Vídeo de fundo */
 .video-bg {
   position: absolute;
   top: 50%;
@@ -26,6 +26,7 @@ body, html {
   filter: brightness(0.6);
 }
 
+/* Camada escura sobre o vídeo */
 .overlay {
   position: absolute;
   inset: 0;
@@ -33,6 +34,7 @@ body, html {
   z-index: 1;
 }
 
+/* Conteúdo centralizado */
 .conteudo {
   position: relative;
   z-index: 2;
@@ -49,11 +51,11 @@ body, html {
 .titulo {
   font-size: 4rem;
   font-weight: bold;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
   margin-bottom: 3rem;
 }
 
-/* Botões em coluna, largura 100% max 480px */
+/* Grade de botões */
 .botoes-grade {
   display: flex;
   flex-direction: column;
@@ -64,45 +66,34 @@ body, html {
   margin: 0 auto;
 }
 
+/* Cada botão ocupa 100% */
 .botao-container {
   width: 100%;
   padding: 0;
 }
 
+/* Estilo base dos botões */
 .botao-transparente {
-  position: relative;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   height: 80px;
-  background-color: transparent !important;
-  color: #fff;
-  font-weight: 700;
   font-size: 1.8rem;
+  font-weight: 700;
   text-align: center;
-  border-radius: 0;
   text-decoration: none;
-  box-shadow: none !important;
-  transition: color 0.3s ease, background-color 0.3s ease;
-  user-select: none;
-  padding: 0;
-  cursor: pointer;
-  overflow: visible;
   border: none;
+  color: #fff;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
+/* Hover azul pastel */
 .botao-transparente:hover,
 .botao-transparente:focus {
   background-color: #90caf9; /* azul pastel */
-  color: #fff;
-  transform: none;
-  box-shadow: none;
-  outline: none;
-}
-
-.botao-texto .descricao {
-  display: none;
+  color: #000; /* texto escuro para contraste */
 }
 
 /* Rodapé */
@@ -118,7 +109,7 @@ body, html {
 }
 
 .footer a {
-  color: #25d366;
+  color: #25d366; /* verde WhatsApp */
   font-weight: 600;
   text-decoration: none;
 }
