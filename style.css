@@ -33,19 +33,32 @@ body, html {
 }
 
 .botoes-grade {
-  max-width: 400px;
+  max-width: 600px; /* aumentei para os botões maiores */
   margin: 0 auto;
 }
 
-/* Botões translúcidos com hover colorido */
+/* Container dos botões para espaçamento lateral */
+.botoes-grade > div {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.botao-container {
+  position: relative;
+  padding: 0 8px;
+}
+
+/* Botões translúcidos maiores, com descrição */
 .botao-transparente {
-  display: inline-block;
-  width: 100%;
-  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 140px;
   background-color: rgba(255, 255, 255, 0.3);
   color: #333;
   font-weight: 600;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   text-align: center;
   border-radius: 12px;
   text-decoration: none;
@@ -55,6 +68,7 @@ body, html {
     color 0.3s ease,
     transform 0.2s ease;
   user-select: none;
+  padding: 10px 15px;
 }
 
 .botao-transparente:hover {
@@ -64,30 +78,39 @@ body, html {
   box-shadow: 0 6px 14px rgba(250, 230, 100, 0.6);
 }
 
-/* Cabeçalhos com linhas decorativas */
+.botao-texto small.descricao {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 6px;
+  display: block;
+}
+
+/* Linhas divisórias */
 .linha-horizontal {
   position: absolute;
-  top: 100%;
+  top: 50%;
   left: 0;
   width: 100%;
   height: 3px;
   background-color: #ffc107; /* amarelo pastel */
   box-shadow: 0 0 8px #ffeb3b;
-  transform: translateY(-6px);
   border-radius: 2px;
   z-index: 10;
+  transform: translateY(-50%);
 }
 
 .linha-diagonal {
   position: absolute;
   top: 0;
-  right: 0;
-  width: 5px;
+  left: 50%;
+  width: 3px;
   height: 100%;
-  background: linear-gradient(135deg, transparent 30%, #ffeb3b 80%);
+  background: linear-gradient(45deg, transparent 30%, #ffeb3b 80%);
   clip-path: polygon(0 0, 100% 0, 100% 100%);
   filter: drop-shadow(0 0 5px #ffeb3b);
+  border-radius: 2px;
   z-index: 10;
+  transform: translateX(-50%);
 }
 
 /* Rodapé */
@@ -115,11 +138,6 @@ body, html {
 
 /* Responsividade para grade e botões */
 
-.botoes-grade > div {
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
 @media (max-width: 575.98px) {
   .titulo {
     font-size: 2.5rem;
@@ -127,6 +145,7 @@ body, html {
   .botao-transparente {
     font-size: 1rem;
     padding: 0.8rem 0;
+    height: 110px;
   }
   .botoes-grade {
     max-width: 100%;
