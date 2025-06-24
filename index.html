@@ -11,7 +11,6 @@
       height: 100%;
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      overflow: hidden; /* evita scroll com vídeo fullscreen */
     }
 
     .hero {
@@ -21,12 +20,11 @@
       background: #000;
     }
 
-    /* Estilo do iframe do YouTube em fullscreen como fundo */
     .video-bg {
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 177.77vh; /* 100 * 16/9 para cobrir toda altura */
+      width: 177.77vh;
       height: 100vh;
       transform: translate(-50%, -50%);
       pointer-events: none;
@@ -34,7 +32,6 @@
       filter: brightness(0.6);
     }
 
-    /* Overlay preta semi-transparente */
     .overlay {
       position: absolute;
       inset: 0;
@@ -77,46 +74,30 @@
     }
 
     .botao-transparente {
-      position: relative;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       height: 80px;
-      background-color: transparent !important;
-      color: #fff;
-      font-weight: 700;
       font-size: 1.8rem;
+      font-weight: 700;
       text-align: center;
-      border-radius: 0;
       text-decoration: none;
-      box-shadow: none !important;
-      transition: color 0.3s ease, background-color 0.3s ease;
-      user-select: none;
-      padding: 0;
-      cursor: pointer;
-      overflow: visible;
       border: none;
+      color: #fff;
+      background-color: transparent;
+      transition: all 0.3s ease;
+      cursor: pointer;
     }
 
     .botao-transparente:hover,
     .botao-transparente:focus {
-      background-color: #1e88e5; /* azul vibrante */
+      background-color: #1e88e5;
       color: #fff;
-      transform: none;
-      box-shadow: none;
-      outline: none;
-    }
-
-    .botao-texto .descricao {
-      display: none;
     }
 
     .footer {
       border-top: 1px solid #ddd;
       background-color: #f8f9fa;
-      position: relative;
-      z-index: 5;
       padding: 15px 10px;
       text-align: center;
       font-size: 0.9rem;
@@ -210,6 +191,7 @@
     </div>
   </div>
 
+  <!-- Rodapé visível fora da hero -->
   <footer class="footer">
     <a href="https://wa.me/5511912345678" target="_blank" rel="noopener" aria-label="WhatsApp" class="whatsapp-link">
       📱 WhatsApp
