@@ -1,1 +1,70 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Página Inicial */
+.hero {
+  background-image: url('https://source.unsplash.com/1600x900/?nature,farm');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.conteudo {
+  position: relative;
+  z-index: 2;
+}
+
+.titulo {
+  font-size: 3.5rem;
+  font-weight: bold;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+}
+
+.botoes-grade {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.botao {
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: transform 0.2s ease;
+}
+
+.botao:hover {
+  transform: scale(1.05);
+}
+
+/* Rodapé e conteúdo interno */
+.footer {
+  border-top: 1px solid #ddd;
+}
+
+.shadow-top {
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
 
