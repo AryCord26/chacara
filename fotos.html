@@ -23,50 +23,49 @@
     }
     main.container {
       flex-grow: 1;
-      padding: 2rem 1rem 4rem;
-      max-width: 960px;
+      padding: 3rem 1rem 4rem;
+      max-width: 900px;
       margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
-    /* Grid das fotos com 3 colunas e gap */
     .galeria {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+      width: 100%;
+      margin-bottom: 3rem;
     }
     figure {
       margin: 0;
-      border-radius: 8px;
+      border-radius: 12px;
       overflow: hidden;
-      background-color: #fff;
-      box-shadow: 0 4px 10px rgba(0,77,64,0.1);
-      transition: box-shadow 0.3s ease;
-    }
-    figure:hover {
-      box-shadow: 0 8px 20px rgba(0,77,64,0.3);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      background: white;
+      display: flex;
+      flex-direction: column;
     }
     figure img {
       width: 100%;
-      height: 200px;
+      height: 180px;
       object-fit: cover;
       display: block;
     }
     figcaption {
-      padding: 0.8rem 1rem;
-      font-size: 0.95rem;
-      color: #004d40;
-      font-weight: 600;
-      background-color: #e0f2f1;
-      text-align: center;
+      padding: 12px 16px;
+      font-size: 1rem;
+      color: #555;
+      flex-grow: 1;
+      background: #f0f0f0;
+      border-top: 1px solid #ddd;
     }
-
-    /* Botões 2x2 padrão */
     .botoes-grade {
       display: grid;
       grid-template-columns: repeat(2, 220px);
       grid-template-rows: repeat(2, 80px);
       gap: 16px;
       justify-content: center;
-      margin-top: 3rem;
     }
     .botao-transparente {
       background-color: #e0f7fa !important;
@@ -97,6 +96,9 @@
       box-shadow: 0 6px 14px rgba(0, 77, 64, 0.4);
       outline: none;
     }
+    .botao-texto .descricao {
+      display: none;
+    }
     footer.footer {
       border-top: 1px solid #ddd;
       background-color: #f8f9fa;
@@ -104,7 +106,6 @@
       font-size: 0.9rem;
       text-align: center;
       color: #333;
-      margin-top: auto;
     }
     footer.footer a {
       color: #25d366;
@@ -120,11 +121,13 @@
         grid-template-columns: 1fr;
         grid-template-rows: repeat(4, 80px);
         max-width: 260px;
-        margin: 0 auto;
       }
       .botao-transparente {
         font-size: 1.1rem;
         height: 70px;
+      }
+      figure img {
+        height: 150px;
       }
     }
   </style>
@@ -135,34 +138,34 @@
   </header>
 
   <main class="container">
-    <section class="galeria">
+    <section class="galeria" aria-label="Galeria de fotos da chácara">
       <figure>
-        <img src="https://source.unsplash.com/600x400/?farm,countryside" alt="Vista geral da chácara com área verde" />
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Vista geral da chácara com área verde" />
         <figcaption>Vista geral da chácara com área verde e natureza exuberante.</figcaption>
       </figure>
       <figure>
-        <img src="https://source.unsplash.com/600x400/?pool,water" alt="Piscina cristalina da chácara" />
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80" alt="Piscina cristalina da chácara" />
         <figcaption>Piscina cristalina perfeita para relaxar nos dias quentes.</figcaption>
       </figure>
       <figure>
-        <img src="https://source.unsplash.com/600x400/?nature,trees" alt="Área verde com árvores nativas" />
+        <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=600&q=80" alt="Área verde com árvores nativas" />
         <figcaption>Área verde preservada com árvores nativas da região.</figcaption>
       </figure>
       <figure>
-        <img src="https://source.unsplash.com/600x400/?barbecue,outdoor" alt="Espaço para churrasco ao ar livre" />
+        <img src="https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?auto=format&fit=crop&w=600&q=80" alt="Espaço para churrasco ao ar livre" />
         <figcaption>Espaço para churrasco ao ar livre, ideal para confraternizações.</figcaption>
       </figure>
       <figure>
-        <img src="https://source.unsplash.com/600x400/?fireplace,cabin" alt="Lareira aconchegante para noites frias" />
+        <img src="https://images.unsplash.com/photo-1486308510493-cb3f30b8aaf9?auto=format&fit=crop&w=600&q=80" alt="Lareira aconchegante para noites frias" />
         <figcaption>Lareira aconchegante para noites frias e momentos relaxantes.</figcaption>
       </figure>
       <figure>
-        <img src="https://source.unsplash.com/600x400/?garden,flowers" alt="Jardim florido e bem cuidado" />
+        <img src="https://images.unsplash.com/photo-1465188035480-99a29a4f3453?auto=format&fit=crop&w=600&q=80" alt="Jardim florido e bem cuidado" />
         <figcaption>Jardim florido e bem cuidado que traz alegria ao ambiente.</figcaption>
       </figure>
     </section>
 
-    <div class="botoes-grade">
+    <nav class="botoes-grade" aria-label="Navegação entre páginas">
       <a href="index.html" class="botao-transparente" tabindex="0">
         <div class="botao-texto"><strong>Início</strong></div>
       </a>
@@ -175,7 +178,7 @@
       <a href="contato.html" class="botao-transparente" tabindex="0">
         <div class="botao-texto"><strong>Contato</strong></div>
       </a>
-    </div>
+    </nav>
   </main>
 
   <footer class="footer">
