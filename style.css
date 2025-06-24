@@ -4,14 +4,15 @@ body, html {
   font-family: 'Segoe UI', sans-serif;
 }
 
-/* Hero com vídeo */
+/* Página Inicial */
 .hero {
+  /* removido background-image para usar vídeo */
   position: relative;
   height: 100vh;
   overflow: hidden;
 }
 
-/* Vídeo de fundo */
+/* Vídeo de fundo para hero */
 .video-bg {
   position: absolute;
   top: 50%;
@@ -23,26 +24,24 @@ body, html {
   z-index: 0;
   transform: translate(-50%, -50%);
   object-fit: cover;
-  filter: brightness(0.6);
+  filter: brightness(0.6); /* escurecer levemente o vídeo */
 }
 
-/* Camada escura sobre o vídeo */
 .overlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.4); /* leve transparência preta */
   z-index: 1;
 }
 
-/* Conteúdo centralizado */
 .conteudo {
   position: relative;
   z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 100vh;
+  justify-content: center; /* centraliza verticalmente */
+  height: 100vh;           /* altura total da tela */
   padding: 0 10px;
   color: #fff;
   text-align: center;
@@ -51,11 +50,11 @@ body, html {
 .titulo {
   font-size: 4rem;
   font-weight: bold;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 2px 10px rgba(0,0,0,0.6);
   margin-bottom: 3rem;
 }
 
-/* Grade de botões */
+/* Botões em coluna, largura 100% max 480px */
 .botoes-grade {
   display: flex;
   flex-direction: column;
@@ -66,34 +65,46 @@ body, html {
   margin: 0 auto;
 }
 
-/* Cada botão ocupa 100% */
+/* Container dos botões */
 .botao-container {
   width: 100%;
   padding: 0;
 }
 
-/* Estilo base dos botões */
+/* Botões transparentes, sem sombra, texto branco */
 .botao-transparente {
+  position: relative;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   height: 80px;
-  font-size: 1.8rem;
-  font-weight: 700;
-  text-align: center;
-  text-decoration: none;
-  border: none;
+  background-color: transparent !important;
   color: #fff;
-  background-color: transparent;
-  transition: all 0.3s ease;
+  font-weight: 700;
+  font-size: 1.8rem;
+  text-align: center;
+  border-radius: 0;
+  text-decoration: none;
+  box-shadow: none !important;
+  transition: color 0.3s ease;
+  user-select: none;
+  padding: 0;
   cursor: pointer;
+  overflow: visible;
+  border: none;
 }
 
-/* Hover azul pastel */
+/* Hover: apenas a cor do texto muda para azul pastel */
 .botao-transparente:hover,
 .botao-transparente:focus {
-  background-color: #90caf9; /* azul pastel */
-  color: #000; /* texto escuro para contraste */
+  color: #90caf9; /* azul pastel */
+  background-color: transparent !important;
+  outline: none;
+}
+
+.botao-texto .descricao {
+  display: none;
 }
 
 /* Rodapé */
@@ -109,7 +120,7 @@ body, html {
 }
 
 .footer a {
-  color: #25d366; /* verde WhatsApp */
+  color: #25d366; /* verde whatsapp */
   font-weight: 600;
   text-decoration: none;
 }
