@@ -13,19 +13,32 @@
       font-family: 'Segoe UI', sans-serif;
     }
 
+    /* Removido background-image da hero para usar video */
     .hero {
-      background-image: url('https://source.unsplash.com/1600x900/?nature,farm');
-      background-size: cover;
-      background-position: center;
-      height: 100vh;
       position: relative;
+      height: 100vh;
       overflow: hidden;
+    }
+
+    /* Vídeo de fundo ocupa toda área e fica atrás */
+    .video-fundo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: 0;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      filter: brightness(0.6);
     }
 
     .overlay {
       position: absolute;
       inset: 0;
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: rgba(0, 0, 0, 0.4);
       z-index: 1;
     }
 
@@ -148,6 +161,12 @@
 </head>
 <body class="home">
   <div class="hero">
+    <!-- Vídeo de fundo -->
+    <video class="video-fundo" autoplay muted loop playsinline>
+      <source src="https://cdn.pixabay.com/vimeo/406665583/field-48835.mp4?width=1280&hash=58b4a5a5a8263b71ee4f83a184bf616c1d328992" type="video/mp4" />
+      Seu navegador não suporta vídeo em background.
+    </video>
+
     <div class="overlay"></div>
 
     <div class="conteudo">
